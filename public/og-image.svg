@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190F24"/>
+      <stop offset="100%" stop-color="#0E0A14"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5FF"/>
+      <stop offset="100%" stop-color="#E2D4F0"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2A9BE"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="180" r="220" fill="#C4B5FD" fill-opacity="0.08"/>
+  <circle cx="200" cy="450" r="180" fill="#E2A9BE" fill-opacity="0.06"/>
+  <text x="100" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="600" letter-spacing="4" fill="url(#accentGrad)">PORTFOLIO</text>
+  <text x="100" y="320" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="64" font-weight="700" fill="url(#textGrad)">Chathuni Janadhi</text>
+  <text x="100" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="500" fill="url(#accentGrad)">Information Technology Undergraduate</text>
+  <text x="100" y="440" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" fill="#A89EB5">Matara, Sri Lanka</text>
+</svg>
