@@ -6,7 +6,10 @@ export function HeroBackdrop() {
 
       {/* Soft Ambient Floating Gradients */}
       <div className="absolute -left-20 -top-20 h-96 w-96 rounded-full bg-accent/15 blur-3xl" />
-      <div className="absolute right-0 top-10 h-[28rem] w-[28rem] rounded-full bg-rose-accent/12 blur-3xl" />
+
+      {/* Soft Light Purple Aura behind the profile image area on the right */}
+      <div className="absolute right-0 top-1/4 h-[30rem] w-[30rem] -translate-y-12 rounded-full bg-gradient-to-br from-accent/20 via-purple-500/12 to-rose-accent/10 blur-[80px]" />
+
       <div className="absolute bottom-10 left-1/3 h-80 w-80 rounded-full bg-accent/8 blur-3xl" />
 
       {/* Minimal Delicate Background Rings */}
@@ -22,4 +25,3 @@ export function HeroBackdrop() {
     </div>
   )
 }
-
