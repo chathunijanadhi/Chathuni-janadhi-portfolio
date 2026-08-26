@@ -1,5 +1,4 @@
 import { motion } from 'motion/react'
-import { MapPin, Sparkles, BookOpen, Layers } from 'lucide-react'
 import { Container } from '../components/Container'
 import { SectionHeading } from '../components/SectionHeading'
 import { portfolio } from '../data/portfolio'
@@ -8,86 +7,65 @@ import { fadeUp, stagger } from '../lib/motion'
 
 export function About() {
   const reduced = usePrefersReducedMotion()
-  const { person } = portfolio
-
-  const highlights = [
-    {
-      icon: MapPin,
-      label: 'Location',
-      value: person.location,
-    },
-    {
-      icon: BookOpen,
-      label: 'Field of Study',
-      value: 'Information Technology',
-    },
-    {
-      icon: Layers,
-      label: 'Primary Focus',
-      value: 'Software Development & Problem Solving',
-    },
-  ]
+  const { person, currentlyLearning, stats } = portfolio
 
   return (
-    <section id="about" className="relative py-16 sm:py-24 lg:py-32">
+    <section id="about" className="py-16 sm:py-24 lg:py-32">
       <Container>
-        <SectionHeading eyebrow="Profile" title="About Chathuni" />
+        <SectionHeading eyebrow="Profile" title="About Me" />
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-12">
-          {/* Biography Paragraph */}
-          <motion.div
-            variants={fadeUp(reduced)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="space-y-5 rounded-3xl border border-border/80 bg-elevated/70 p-6 shadow-sm backdrop-blur-xl sm:p-8 md:p-10"
-          >
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-accent">
-              <Sparkles size={14} className="text-rose-accent" />
-              <span>Biography</span>
-            </div>
-            <p className="font-display text-xl font-medium leading-snug text-fg sm:text-2xl">
-              Building efficient, reliable, and user-friendly software solutions.
+        <div className="mt-8 grid gap-8 sm:mt-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
+          <div className="space-y-4 text-sm leading-relaxed text-muted min-[380px]:text-base sm:space-y-5 sm:text-lg">
+            <p>{person.introduction}</p>
+            <p>
+              As an IT undergraduate at {person.university}, I am interested in software
+              engineering and full-stack development — from web and backend systems to databases,
+              cloud technologies, cybersecurity, software architecture, and problem solving.
             </p>
-            <p className="text-sm leading-relaxed text-muted sm:text-base">
-              {person.bio}
-            </p>
-          </motion.div>
+          </div>
 
-          {/* Quick Info Highlight Card */}
-          <motion.div
-            variants={stagger(reduced, 0.08)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col gap-3.5"
-          >
-            {highlights.map((item) => {
-              const Icon = item.icon
-              return (
-                <motion.div
-                  key={item.label}
-                  variants={fadeUp(reduced)}
-                  className="flex items-start gap-4 rounded-2xl border border-border/80 bg-elevated/80 p-5 shadow-xs transition duration-300 hover:border-accent/50 hover:shadow-md"
+          <div className="rounded-3xl border border-border/80 bg-elevated/80 p-5 sm:p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+              Currently Learning
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {currentlyLearning.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-border/80 bg-bg/80 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-fg"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent dark:bg-accent/15">
-                    <Icon size={20} />
-                  </div>
-                  <div>
-                    <span className="text-xs font-medium uppercase tracking-wider text-muted">
-                      {item.label}
-                    </span>
-                    <p className="mt-0.5 text-sm font-semibold text-fg sm:text-base">
-                      {item.value}
-                    </p>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </motion.div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
+
+        <motion.ul
+          variants={stagger(reduced)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-8 grid grid-cols-2 gap-3 min-[380px]:gap-4 sm:mt-12 lg:grid-cols-4"
+        >
+          {stats.map((stat) => (
+            <motion.li
+              key={stat.label}
+              variants={fadeUp(reduced)}
+              className="rounded-2xl border border-border/80 bg-elevated/80 p-4 sm:rounded-3xl sm:p-6"
+            >
+              <p className="font-display text-3xl font-bold text-accent sm:text-4xl">
+                {stat.value}
+              </p>
+              <p className="mt-1.5 text-xs text-muted sm:mt-2 sm:text-sm">
+                {stat.label}
+              </p>
+            </motion.li>
+          ))}
+        </motion.ul>
       </Container>
     </section>
   )
 }
+
 

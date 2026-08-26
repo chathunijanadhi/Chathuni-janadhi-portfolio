@@ -3,38 +3,73 @@ export type NavItem = {
   label: string
 }
 
+export type Stat = {
+  value: string
+  label: string
+}
+
+export type EducationSubject = {
+  name: string
+  grade?: string
+}
+
 export type EducationEntry = {
   id: string
+  status: 'Completed' | 'Currently Studying'
   institution: string
-  stream: string
+  qualification: string
   location: string
-  description?: string
-  subjects: string[]
+  description: string
+  subjects?: EducationSubject[]
 }
 
-export type InterestArea = {
+export type Skill = {
+  name: string
+}
+
+export type SkillGroup = {
+  id: string
+  title: string
+  skills: Skill[]
+}
+
+export type JourneyEntry = {
+  id: string
+  title: string
+  context: string
+  description: string
+}
+
+export type Service = {
   id: string
   title: string
   description: string
-  icon: 'code' | 'lightbulb' | 'sparkles' | 'book'
+  icon: 'layers' | 'server' | 'database' | 'cloud'
 }
 
-export type ProjectModule = {
-  title: string
-  description: string
-  points: string[]
+export type ProjectLinks = {
+  github?: string
+  live?: string
 }
 
 export type Project = {
   id: string
+  number: string
   title: string
-  subtitle: string
+  year: string
   category: string
-  role: string
-  overview: string
+  role?: string
+  myContributions?: string[]
+  description: string
+  overview?: string
+  problem?: string
+  solution?: string
+  challenges?: string
+  learnings?: string
   technologies: string[]
-  keyContributions: string[]
-  modules: ProjectModule[]
+  features?: string[]
+  links?: ProjectLinks
+  featured?: boolean
 }
 
 export type ContactInfo = {
@@ -50,10 +85,13 @@ export type ContactInfo = {
 export type Person = {
   name: string
   firstName: string
-  role: string
+  professionalTitle: string
+  shortTitle: string
   greeting: string
-  bio: string
+  introduction: string
   heroDescription: string
+  university: string
+  degree: string
   location: string
   profileImage: string
   profileImageAlt: string
@@ -67,9 +105,17 @@ export type PortfolioData = {
   }
   contact: ContactInfo
   navigation: NavItem[]
-  project: Project
+  stats: Stat[]
+  currentlyLearning: string[]
   education: EducationEntry[]
-  interests: InterestArea[]
+  skills: SkillGroup[]
+  projects: Project[]
+  journey: JourneyEntry[]
+  services: Service[]
+  form?: {
+    formspreeEndpointEnv?: string
+  }
 }
+
 
 

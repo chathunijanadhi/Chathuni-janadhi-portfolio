@@ -5,23 +5,21 @@ import { portfolio } from '../data/portfolio'
 
 export function Education() {
   return (
-    <section id="education" className="relative py-16 sm:py-24 lg:py-32">
+    <section id="education" className="section-band py-16 sm:py-24 lg:py-32">
       <Container>
-        <SectionHeading
-          eyebrow="Academic Background"
-          title="Education"
-          description="Foundational education building scientific knowledge, analytical thought, and problem-solving fundamentals."
-        />
-        <div className="mt-10 sm:mt-12">
+        <SectionHeading eyebrow="Academic" title="Education" />
+        <div className="mt-8 sm:mt-12">
           <Timeline>
-            {portfolio.education.map((entry) => (
+            {portfolio.education.map((entry, index) => (
               <TimelineItem
                 key={entry.id}
-                institution={entry.institution}
-                stream={entry.stream}
+                eyebrow={entry.status}
+                title={entry.institution}
+                subtitle={entry.qualification}
                 location={entry.location}
                 description={entry.description}
                 subjects={entry.subjects}
+                isLast={index === portfolio.education.length - 1}
               />
             ))}
           </Timeline>
@@ -30,4 +28,5 @@ export function Education() {
     </section>
   )
 }
+
 

@@ -4,8 +4,10 @@ import { About } from './sections/About'
 import { Contact } from './sections/Contact'
 import { Education } from './sections/Education'
 import { Hero } from './sections/Hero'
-import { Interests } from './sections/Interests'
+import { Journey } from './sections/Journey'
 import { Projects } from './sections/Projects'
+import { Services } from './sections/Services'
+import { Skills } from './sections/Skills'
 
 export default function App() {
   return (
@@ -20,14 +22,17 @@ export default function App() {
       <main id="main">
         <Hero />
         <About />
-        <Projects />
-        <Interests />
         <Education />
+        <Skills />
+        <Projects />
+        <Journey />
+        <Services />
         <Contact />
       </main>
       <Footer />
     </div>
   )
 }
+
 
 

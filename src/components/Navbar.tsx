@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
-import { Linkedin, Github } from './icons'
+import { Menu, X } from 'lucide-react'
 import { portfolio } from '../data/portfolio'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
@@ -39,36 +38,19 @@ export function Navbar() {
         initial={reduced ? false : { opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: reduced ? 0 : 0.4 }}
-        className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4"
+        className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-3 sm:px-6 sm:pt-4"
       >
         <div
           className={cn(
-            'mx-auto flex max-w-5xl items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-6',
+            'flex items-center gap-2 rounded-full border px-3 py-1.5 transition-all duration-300 sm:px-4 sm:py-2',
             scrolled
               ? 'border-border/80 bg-bg/85 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-xl dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)]'
-              : 'border-border/40 bg-bg/40 backdrop-blur-md',
+              : 'border-border/50 bg-bg/50 backdrop-blur-md',
           )}
         >
-          {/* Logo / Brand */}
-          <button
-            type="button"
-            onClick={() => handleNavClick('home')}
-            className="group flex items-center gap-2 text-left focus:outline-none"
-            aria-label="Chathuni Janadhi Home"
-          >
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-accent to-rose-accent text-xs font-bold text-white shadow-sm transition group-hover:scale-105">
-              CJ
-            </span>
-            <div className="flex flex-col">
-              <span className="font-display text-sm font-semibold tracking-tight text-fg transition group-hover:text-accent sm:text-base">
-                {portfolio.person.name}
-              </span>
-            </div>
-          </button>
-
           {/* Desktop Navigation Links */}
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-            <ul className="flex items-center gap-1 rounded-full border border-border/50 bg-elevated/50 p-1 backdrop-blur-sm">
+            <ul className="flex items-center gap-1">
               {portfolio.navigation.map((item) => (
                 <li key={item.id}>
                   <button
@@ -76,9 +58,9 @@ export function Navbar() {
                     onClick={() => handleNavClick(item.id)}
                     aria-current={active === item.id ? 'true' : undefined}
                     className={cn(
-                      'relative rounded-full px-3.5 py-1.5 text-xs font-medium transition duration-200 sm:text-sm',
+                      'relative rounded-full px-3.5 py-1.5 text-xs font-semibold transition duration-200 sm:text-sm',
                       active === item.id
-                        ? 'bg-accent text-accent-fg shadow-sm'
+                        ? 'bg-accent text-accent-fg shadow-xs'
                         : 'text-muted hover:text-fg hover:bg-elevated/80',
                     )}
                   >
@@ -89,45 +71,24 @@ export function Navbar() {
             </ul>
           </nav>
 
-          {/* Right Action Area */}
-          <div className="flex items-center gap-2">
-            <a
-              href={portfolio.contact.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hidden items-center gap-1.5 rounded-full border border-border/80 bg-elevated/60 px-3 py-1.5 text-xs font-medium text-fg transition duration-200 hover:border-accent hover:text-accent lg:inline-flex"
-              aria-label="GitHub profile (opens in new tab)"
-            >
-              <Github size={14} className="text-accent" />
-              <span>GitHub</span>
-              <ArrowUpRight size={12} className="text-muted" />
-            </a>
-
-            <a
-              href={portfolio.contact.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hidden items-center gap-1.5 rounded-full border border-border/80 bg-elevated/60 px-3.5 py-1.5 text-xs font-medium text-fg transition duration-200 hover:border-accent hover:text-accent sm:inline-flex"
-              aria-label="LinkedIn profile (opens in new tab)"
-            >
-              <Linkedin size={14} className="text-accent" />
-              <span>LinkedIn</span>
-              <ArrowUpRight size={12} className="text-muted" />
-            </a>
-
-            <ThemeToggle />
-
-            {/* Mobile Hamburger Toggle Button */}
+          {/* Mobile Label / Trigger */}
+          <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-elevated/70 text-fg transition hover:border-accent md:hidden"
+              className="inline-flex items-center gap-1.5 rounded-full bg-elevated/70 px-3 py-1.5 text-xs font-semibold text-fg"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+              {mobileMenuOpen ? <X size={15} /> : <Menu size={15} />}
+              <span className="capitalize">{active || 'Menu'}</span>
             </button>
           </div>
+
+          <div className="h-4 w-px bg-border/60" aria-hidden />
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
         </div>
       </motion.header>
 
@@ -172,34 +133,6 @@ export function Navbar() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-5 pt-4 border-t border-border flex flex-col gap-2">
-                  <a
-                    href={portfolio.contact.github}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="flex items-center justify-between rounded-2xl border border-border/80 bg-bg/80 px-4 py-2.5 text-xs font-medium text-fg"
-                  >
-                    <span className="flex items-center gap-2">
-                      <Github size={15} className="text-accent" />
-                      GitHub Profile
-                    </span>
-                    <ArrowUpRight size={14} className="text-muted" />
-                  </a>
-
-                  <a
-                    href={portfolio.contact.linkedin}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="flex items-center justify-between rounded-2xl border border-border/80 bg-bg/80 px-4 py-2.5 text-xs font-medium text-fg"
-                  >
-                    <span className="flex items-center gap-2">
-                      <Linkedin size={15} className="text-accent" />
-                      Connect on LinkedIn
-                    </span>
-                    <ArrowUpRight size={14} className="text-muted" />
-                  </a>
-                </div>
               </nav>
             </motion.div>
           </motion.div>
@@ -208,4 +141,5 @@ export function Navbar() {
     </>
   )
 }
+
 

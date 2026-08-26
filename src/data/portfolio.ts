@@ -4,20 +4,24 @@ export const portfolio: PortfolioData = {
   person: {
     name: 'Chathuni Janadhi',
     firstName: 'Chathuni',
-    role: 'Information Technology Undergraduate',
+    professionalTitle: 'Full-Stack Developer & Information Technology Undergraduate',
+    shortTitle: 'Full-Stack Developer & IT Undergraduate',
     greeting: "Hello, I'm",
-    bio: 'Chathuni Janadhi is an Information Technology undergraduate with an interest in software development and problem-solving. She enjoys designing and developing user-friendly, efficient, and reliable software solutions while continuously improving her technical skills.',
+    introduction:
+      'I am an Information Technology undergraduate passionate about building modern, secure, and scalable software solutions. I enjoy developing full-stack applications, exploring new technologies, and turning real-world problems into practical digital solutions.',
     heroDescription:
-      'Information Technology undergraduate passionate about technology, software development, problem-solving, and continuous learning.',
+      'I build modern, secure and scalable applications that solve real-world problems.',
+    university: 'University of Moratuwa',
+    degree: 'B.Sc. (Hons) in Information Technology',
     location: 'Matara, Sri Lanka',
     profileImage:
       'https://res.cloudinary.com/dbmjoemmg/image/upload/v1787578983/WhatsApp_Image_2026-08-24_at_19.07.03_szulsx.jpg',
     profileImageAlt: 'Chathuni Janadhi',
   },
   seo: {
-    title: 'Chathuni Janadhi | Information Technology Undergraduate',
+    title: 'Chathuni Janadhi | Full-Stack Developer & IT Undergraduate',
     description:
-      'Personal portfolio of Chathuni Janadhi, an Information Technology undergraduate interested in software development, problem solving, user-friendly software solutions, and continuous learning.',
+      'Personal portfolio of Chathuni Janadhi, an Information Technology 2nd year undergraduate at the University of Moratuwa interested in software development, problem solving, and full-stack solutions.',
   },
   contact: {
     name: 'Chathuni Janadhi',
@@ -31,135 +35,198 @@ export const portfolio: PortfolioData = {
   navigation: [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'interests', label: 'Focus' },
     { id: 'education', label: 'Education' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'journey', label: 'Journey' },
     { id: 'contact', label: 'Contact' },
   ],
-  project: {
-    id: 'ecms',
-    title: 'Elderly Care Management System (ECMS)',
-    subtitle: 'Comprehensive Healthcare Coordination Platform',
-    category: 'Full-Stack Web Application',
-    role: 'Home Page, Navigation, Doctor Dashboard & Doctor-Related Modules',
-    overview:
-      'My primary contribution to the Elderly Care Management System (ECMS) focused on both frontend and backend development for the Home Page, Navigation Bar, Doctor Dashboard, and associated doctor-related workflows. This included UI design, API integration, database architecture with TypeORM & PostgreSQL, business logic implementation, appointment and prescription management, doctor availability and channeling, payment tracking integration, SMTP prescription notifications, and software engineering documentation (UML diagrams).',
-    technologies: [
-      'React',
-      'TypeScript',
-      'NestJS',
-      'PostgreSQL',
-      'TypeORM',
-      'RESTful APIs',
-      'SMTP (Email Notifications)',
-      'UML Modeling',
-    ],
-    keyContributions: [
-      'Developed the principal Home Page with responsive layout, service info, smooth scrolling, reveal animations, and parallax effects using React & TypeScript.',
-      'Engineered the reusable Navigation Bar with responsive mobile dropdown menus for seamless application-wide routing.',
-      'Designed and developed the centralized Doctor Dashboard for managing appointments, patient medical history, prescriptions, availability, channeling slots, and payment status.',
-      'Implemented the Doctor Availability & Channeling workflow: doctors set availability, administrators generate channeling slots, doctors accept/reject slots, and accepted slots open for family appointment bookings.',
-      'Built Appointment Management supporting separate handling of active and completed records integrated with prescription and payment status.',
-      'Implemented Patient Information & Medical History access (conditions, allergies, previous medications, caregiver-recorded vitals for care-plan enrolled patients).',
-      'Engineered Prescription Management enabling active medication review (continue/cancel) and new prescription issuance with clinical notes, dosages, duration, and frequency.',
-      'Implemented automated SMTP email notifications sending prescribed medication details directly to family members upon prescription creation.',
-      'Structured PostgreSQL database entities & relational associations using NestJS and TypeORM with dedicated RESTful API communication.',
-      'Authored software engineering documentation including Use Case, Activity, and Sequence diagrams representing doctor workflows.',
-    ],
-    modules: [
-      {
-        title: 'Home Page & Navigation Bar',
-        description:
-          'Principal entry interface developed with React and TypeScript.',
-        points: [
-          'Responsive layout, service information, and user interaction components.',
-          'Visual enhancements including smooth scrolling, reveal animations, and parallax effects.',
-          'Reusable Navigation Bar component with responsive mobile dropdown menu.',
-        ],
-      },
-      {
-        title: 'Doctor Dashboard',
-        description:
-          'Centralized management hub for clinical and administrative operations.',
-        points: [
-          'Dynamic state management for appointments, elderly patient records, and channeling slots.',
-          'Reusable UI components for dashboard metrics, data tables, and modal forms.',
-          'Integration with backend REST APIs to retrieve and update records in real time.',
-        ],
-      },
-      {
-        title: 'Availability & Channeling Workflow',
-        description:
-          'Multi-stakeholder scheduling coordination process.',
-        points: [
-          'Doctors submit availability schedules through their dashboard.',
-          'Administrators generate channeling slots based on submitted doctor availability.',
-          'Doctors accept or reject generated slots before they are published.',
-          'Accepted slots become open for family members to book elderly patient consultations.',
-        ],
-      },
-      {
-        title: 'Prescriptions & SMTP Notifications',
-        description:
-          'End-to-end prescription lifecycle and family notification system.',
-        points: [
-          'Review of active medications to continue or cancel before issuing new prescriptions.',
-          'Structured prescription records containing diagnosis, dosage, frequency, and validity period.',
-          'Automated SMTP email transmission to family members upon successful prescription issuance.',
-        ],
-      },
-      {
-        title: 'Backend, Database & SE Documentation',
-        description:
-          'Robust relational architecture and system design specifications.',
-        points: [
-          'NestJS, TypeORM, and PostgreSQL entities for doctors, appointments, prescriptions, and channeling slots.',
-          'RESTful API architecture separating UI concerns from business logic and database persistence.',
-          'Comprehensive UML diagrams (Use Case, Activity, Sequence diagrams) for doctor workflows.',
-        ],
-      },
-    ],
-  },
+  stats: [
+    { value: '1+', label: 'Years Building' },
+    { value: '5+', label: 'Technologies' },
+    { value: '1', label: 'Major Full-Stack System' },
+    { value: '2nd', label: 'Year Undergraduate' },
+  ],
+  currentlyLearning: [
+    'Cloud Architecture',
+    'Advanced Backend Development',
+    'Cybersecurity',
+    'DevOps',
+    'System Design',
+  ],
   education: [
     {
       id: 'al',
-      institution: 'G.C.E. Advanced Level',
-      stream: 'Biological Science Stream',
+      status: 'Completed',
+      institution: 'Sujatha College, Matara',
+      qualification: 'G.C.E. Advanced Level — Biological Science Stream',
       location: 'Sri Lanka',
       description:
-        'Completed the G.C.E. Advanced Level examination in the Biological Science stream with a focus on analytical thinking and scientific foundation.',
-      subjects: ['Biology', 'Physics', 'Chemistry'],
+        'Completed the G.C.E. Advanced Level examination in the Biological Science stream at Sujatha College, Matara, building a strong foundation in sciences and analytical thinking ahead of university.',
+      subjects: [
+        { name: 'Chemistry', grade: 'A' },
+        { name: 'Biology', grade: 'B' },
+        { name: 'Physics', grade: 'B' },
+      ],
+    },
+    {
+      id: 'uom',
+      status: 'Currently Studying',
+      institution: 'University of Moratuwa',
+      qualification: 'B.Sc. (Hons) in Information Technology (2nd Year)',
+      location: 'Sri Lanka',
+      description:
+        '2nd year undergraduate pursuing an honours degree in Information Technology with a focus on software engineering, systems, and building production-quality applications.',
     },
   ],
-  interests: [
+  skills: [
     {
-      id: 'dev',
-      title: 'Software Development',
-      description:
-        'Interest in designing and developing practical, efficient, and reliable software solutions.',
-      icon: 'code',
+      id: 'frontend',
+      title: 'Frontend',
+      skills: [
+        { name: 'React' },
+        { name: 'TypeScript' },
+        { name: 'JavaScript' },
+        { name: 'HTML' },
+        { name: 'CSS' },
+        { name: 'Tailwind CSS' },
+      ],
     },
     {
-      id: 'problem-solving',
-      title: 'Problem Solving',
-      description:
-        'Enjoys approaching complex problems logically, analyzing requirements, and finding effective solutions.',
-      icon: 'lightbulb',
+      id: 'backend',
+      title: 'Backend',
+      skills: [
+        { name: 'Node.js' },
+        { name: 'NestJS' },
+        { name: 'REST API' },
+        { name: 'Authentication' },
+        { name: 'API Security' },
+      ],
     },
     {
-      id: 'user-friendly',
-      title: 'User-Friendly Software Solutions',
-      description:
-        'Interested in creating software solutions that are clean, intuitive, accessible, and seamless for users.',
-      icon: 'sparkles',
+      id: 'databases',
+      title: 'Databases',
+      skills: [{ name: 'PostgreSQL' }, { name: 'MySQL' }],
     },
     {
-      id: 'learning',
-      title: 'Continuous Learning',
+      id: 'cloud',
+      title: 'Cloud & Deployment',
+      skills: [
+        { name: 'AWS' },
+        { name: 'Amazon S3' },
+        { name: 'AWS RDS' },
+        { name: 'Vercel' },
+        { name: 'Render' },
+      ],
+    },
+    {
+      id: 'programming',
+      title: 'Programming',
+      skills: [{ name: 'Python' }, { name: 'Java' }, { name: 'C' }, { name: 'Dart' }],
+    },
+    {
+      id: 'tools',
+      title: 'Tools',
+      skills: [
+        { name: 'Git' },
+        { name: 'GitHub' },
+        { name: 'VS Code' },
+        { name: 'Postman' },
+        { name: 'pgAdmin' },
+      ],
+    },
+    {
+      id: 'embedded',
+      title: 'Mobile / Embedded',
+      skills: [{ name: 'Flutter' }, { name: 'Arduino' }, { name: 'Raspberry Pi' }],
+    },
+  ],
+  projects: [
+    {
+      id: 'ecms',
+      number: '01',
+      title: 'Elderly Care Management System',
+      year: '2025',
+      category: 'Full-Stack Web Application',
+      featured: true,
+      role: 'Full-Stack Developer — Home Page, Navigation Bar, Doctor Dashboard & Doctor-Related Modules',
       description:
-        'Focused on continuously developing technical knowledge, exploring new technologies, and refining technical skills.',
-      icon: 'book',
+        'A comprehensive elderly care management platform designed to connect administrators, doctors, caregivers, patients, and family members through a centralized digital system.',
+      overview:
+        'My primary contribution to the Elderly Care Management System (ECMS) focused on the implementation of the Home Page, Navigation Bar, Doctor Dashboard, and associated doctor-related functionalities. My responsibilities encompassed both frontend and backend development, including user interface design, API integration, database development, business logic implementation, appointment and prescription management, doctor availability and channeling, payment-related functionality, and prescription email notifications. I also contributed to the software engineering documentation related to the functionalities developed.',
+      myContributions: [
+        'Home Page & Navigation: Developed the principal Home Page with responsive layouts, service information, smooth scrolling, reveal animations, and parallax effects using React & TypeScript, alongside a reusable Navigation Bar with responsive mobile dropdown.',
+        'Doctor Dashboard: Built a centralized interface for managing appointments, elderly patient information, prescriptions, doctor availability, channeling slots, and payment status with reusable components.',
+        'Availability & Channeling Workflow: Implemented doctor availability submission, admin channeling slot creation, doctor accept/reject workflow, and family appointment booking.',
+        'Appointment & Medical History Management: Enabled doctors to review patient history, past conditions, allergies, medications, and caregiver-recorded vitals for enrolled patients.',
+        'Prescription Management & SMTP Notifications: Implemented active medication review, new prescription creation, and automated SMTP email notification dispatch to family members.',
+        'Backend & Database Architecture: Structured PostgreSQL entities and relationships using NestJS & TypeORM, developed RESTful APIs, and authored Use Case, Activity, and Sequence diagrams.',
+      ],
+      technologies: [
+        'React',
+        'TypeScript',
+        'NestJS',
+        'PostgreSQL',
+        'AWS',
+        'JWT',
+        'REST API',
+        'Cloudinary',
+      ],
+      links: {
+        github: 'https://github.com/Chamalka-heshi/Elderly-Home-Care-Management-System',
+        live: 'https://frontend-one-beta-73.vercel.app/',
+      },
+    },
+  ],
+  journey: [
+    {
+      id: 'undergrad',
+      title: 'Information Technology Undergraduate',
+      context: 'University of Moratuwa',
+      description:
+        'Currently pursuing B.Sc. (Hons) in Information Technology as a 2nd year student.',
+    },
+    {
+      id: 'fullstack',
+      title: 'Full-Stack Development',
+      context: 'Academic & personal projects',
+      description:
+        'Building academic and personal applications using React, TypeScript, NestJS, PostgreSQL and cloud services.',
+    },
+    {
+      id: 'cloud',
+      title: 'Cloud Deployment',
+      context: 'Vercel, Render, AWS',
+      description:
+        'Experience deploying frontend and backend applications using services such as Vercel, Render and AWS.',
+    },
+  ],
+  services: [
+    {
+      id: 'fullstack',
+      title: 'Full-Stack Development',
+      description: 'Building complete web applications from frontend to backend.',
+      icon: 'layers',
+    },
+    {
+      id: 'backend',
+      title: 'Backend Development',
+      description: 'Creating secure REST APIs, authentication systems and database-driven applications.',
+      icon: 'server',
+    },
+    {
+      id: 'database',
+      title: 'Database Design',
+      description: 'Designing structured and reliable relational database systems.',
+      icon: 'database',
+    },
+    {
+      id: 'cloud',
+      title: 'Cloud & Deployment',
+      description: 'Deploying applications using modern cloud and hosting platforms.',
+      icon: 'cloud',
     },
   ],
 }
+
 

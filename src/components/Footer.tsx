@@ -16,7 +16,7 @@ export function Footer() {
             {person.name}
           </span>
           <p className="mt-1 text-sm font-medium text-accent">
-            {person.role}
+            {person.shortTitle}
           </p>
           <p className="mt-1 flex items-center gap-1.5 text-xs text-muted">
             <MapPin size={13} className="text-accent" />

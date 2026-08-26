@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Sparkles, User, MapPin } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowDownRight, MapPin, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
 import { Button } from '../components/Button'
 import { Container } from '../components/Container'
@@ -12,37 +12,37 @@ import { scrollToId } from '../lib/utils'
 
 export function Hero() {
   const reduced = usePrefersReducedMotion()
-  const { person, contact } = portfolio
+  const { person } = portfolio
 
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pt-20 pb-8 sm:pt-24 lg:pt-28 lg:pb-12"
+      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pt-20 pb-8 sm:pt-24 lg:pt-28 lg:pb-10"
     >
       <HeroBackdrop />
 
-      <Container className="relative my-auto flex flex-1 flex-col items-center justify-center lg:grid lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-12 xl:gap-16">
+      <Container className="relative my-auto flex flex-1 flex-col items-center justify-center lg:grid lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12 xl:gap-16">
         {/* MOBILE & TABLET LAYOUT (< lg) */}
         <div className="flex w-full max-w-md flex-col items-center text-center lg:hidden">
-          {/* Greeting & Badge */}
+          {/* Greeting */}
           <motion.div
             variants={fadeUp(reduced)}
             initial="hidden"
             animate="visible"
-            className="flex items-center gap-2 rounded-full border border-border/80 bg-elevated/70 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-accent backdrop-blur-sm"
+            className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent sm:text-sm"
           >
             <Sparkles size={13} className="text-rose-accent" />
             <span>{person.greeting}</span>
           </motion.div>
 
-          {/* Profile Image Prominent on Mobile */}
+          {/* Profile Image */}
           <motion.div
             variants={scaleIn(reduced)}
             initial="hidden"
             animate="visible"
             className="my-5 w-full shrink-0"
           >
-            <ProfileMark className="max-w-[260px] sm:max-w-[300px]" />
+            <ProfileMark className="max-w-[240px] sm:max-w-[280px]" />
           </motion.div>
 
           {/* Name */}
@@ -51,12 +51,12 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ delay: reduced ? 0 : 0.08 }}
-            className="font-display text-[2rem] font-bold leading-tight tracking-tight text-fg sm:text-4xl"
+            className="font-display text-[2.2rem] font-bold leading-[1.1] tracking-tight text-fg sm:text-4xl"
           >
             {person.name}
           </motion.h1>
 
-          {/* Professional / Student Title */}
+          {/* Title */}
           <motion.p
             variants={fadeUp(reduced)}
             initial="hidden"
@@ -64,10 +64,10 @@ export function Hero() {
             transition={{ delay: reduced ? 0 : 0.12 }}
             className="mt-2 text-xs font-semibold uppercase tracking-wider text-accent sm:text-sm"
           >
-            {person.role}
+            {person.shortTitle}
           </motion.p>
 
-          {/* Short Introduction */}
+          {/* Intro Description */}
           <motion.p
             variants={fadeUp(reduced)}
             initial="hidden"
@@ -78,30 +78,45 @@ export function Hero() {
             {person.heroDescription}
           </motion.p>
 
+          {/* Location & University Badges */}
+          <motion.div
+            variants={fadeUp(reduced)}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: reduced ? 0 : 0.2 }}
+            className="mt-4 flex flex-wrap justify-center gap-2 text-xs text-muted"
+          >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-elevated/70 px-3 py-1">
+              <MapPin size={12} className="text-accent shrink-0" />
+              {person.location}
+            </span>
+            <span className="rounded-full border border-border/80 bg-elevated/70 px-3 py-1">
+              {person.university}
+            </span>
+          </motion.div>
+
           {/* CTAs */}
           <motion.div
             variants={fadeUp(reduced)}
             initial="hidden"
             animate="visible"
-            transition={{ delay: reduced ? 0 : 0.22 }}
+            transition={{ delay: reduced ? 0 : 0.24 }}
             className="mt-5 flex w-full max-w-xs items-center justify-center gap-3"
           >
             <Button
-              onClick={() => scrollToId('about')}
-              className="flex-1 py-2.5 text-xs font-medium sm:text-sm"
+              onClick={() => scrollToId('projects')}
+              className="flex-1 py-2.5 text-xs font-semibold sm:text-sm"
             >
-              <User size={15} />
-              About Me
+              View Work
+              <ArrowRight size={14} />
             </Button>
             <Button
               variant="secondary"
-              href={contact.linkedin}
-              external
-              className="flex-1 py-2.5 text-xs font-medium sm:text-sm"
-              ariaLabel="Connect on LinkedIn (opens in new tab)"
+              onClick={() => scrollToId('contact')}
+              className="flex-1 py-2.5 text-xs font-semibold sm:text-sm"
             >
-              LinkedIn
-              <ArrowUpRight size={15} />
+              Connect
+              <ArrowDownRight size={14} />
             </Button>
           </motion.div>
 
@@ -110,7 +125,7 @@ export function Hero() {
             variants={fadeUp(reduced)}
             initial="hidden"
             animate="visible"
-            transition={{ delay: reduced ? 0 : 0.28 }}
+            transition={{ delay: reduced ? 0 : 0.3 }}
             className="mt-5"
           >
             <SocialLinks size={16} />
@@ -119,14 +134,14 @@ export function Hero() {
 
         {/* DESKTOP TWO-COLUMN LAYOUT (lg:) */}
         <div className="hidden flex-col items-start text-left lg:flex">
-          {/* Greeting Badge */}
+          {/* Greeting */}
           <motion.div
             variants={fadeUp(reduced)}
             initial="hidden"
             animate="visible"
-            className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-elevated/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.24em] text-accent backdrop-blur-sm shadow-sm"
+            className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.28em] text-accent"
           >
-            <Sparkles size={14} className="text-rose-accent" />
+            <span className="h-px w-6 bg-accent" aria-hidden />
             <span>{person.greeting}</span>
           </motion.div>
 
@@ -149,7 +164,7 @@ export function Hero() {
             transition={{ delay: reduced ? 0 : 0.14 }}
             className="mt-3 text-lg font-semibold tracking-wide text-accent xl:text-xl"
           >
-            {person.role}
+            {person.shortTitle}
           </motion.p>
 
           {/* Short Introduction */}
@@ -163,17 +178,20 @@ export function Hero() {
             {person.heroDescription}
           </motion.p>
 
-          {/* Location Badge */}
+          {/* Location & University Badges */}
           <motion.div
             variants={fadeUp(reduced)}
             initial="hidden"
             animate="visible"
             transition={{ delay: reduced ? 0 : 0.24 }}
-            className="mt-5 flex items-center gap-2"
+            className="mt-6 flex flex-wrap items-center gap-2.5 text-sm text-muted"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-elevated/80 px-3.5 py-1 text-xs font-medium text-muted">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-elevated/80 px-3.5 py-1 text-xs font-medium">
               <MapPin size={13} className="text-accent" />
               {person.location}
+            </span>
+            <span className="rounded-full border border-border/80 bg-elevated/80 px-3.5 py-1 text-xs font-medium">
+              {person.university}
             </span>
           </motion.div>
 
@@ -185,18 +203,13 @@ export function Hero() {
             transition={{ delay: reduced ? 0 : 0.3 }}
             className="mt-8 flex items-center gap-4"
           >
-            <Button onClick={() => scrollToId('about')}>
-              <User size={16} />
-              About Me
+            <Button onClick={() => scrollToId('projects')}>
+              View Work
+              <ArrowRight size={16} />
             </Button>
-            <Button
-              variant="secondary"
-              href={contact.linkedin}
-              external
-              ariaLabel="Connect on LinkedIn (opens in new tab)"
-            >
-              Connect with Me
-              <ArrowUpRight size={16} />
+            <Button variant="secondary" onClick={() => scrollToId('contact')}>
+              Connect
+              <ArrowDownRight size={16} />
             </Button>
           </motion.div>
 
