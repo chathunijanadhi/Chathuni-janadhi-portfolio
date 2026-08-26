@@ -2,7 +2,7 @@ import type { PortfolioData } from '../types/portfolio'
 
 export const portfolio: PortfolioData = {
   person: {
-    name: 'Chathuni Janadhi',
+    name: 'Chathuni Janadhi Jayaweera',
     firstName: 'Chathuni',
     professionalTitle: 'Full-Stack Developer & Information Technology Undergraduate',
     shortTitle: 'Full-Stack Developer & IT Undergraduate',
@@ -16,15 +16,15 @@ export const portfolio: PortfolioData = {
     location: 'Matara, Sri Lanka',
     profileImage:
       'https://res.cloudinary.com/dbmjoemmg/image/upload/v1787578983/WhatsApp_Image_2026-08-24_at_19.07.03_szulsx.jpg',
-    profileImageAlt: 'Chathuni Janadhi',
+    profileImageAlt: 'Chathuni Janadhi Jayaweera',
   },
   seo: {
-    title: 'Chathuni Janadhi | Full-Stack Developer & IT Undergraduate',
+    title: 'Chathuni Janadhi Jayaweera | Full-Stack Developer & IT Undergraduate',
     description:
-      'Personal portfolio of Chathuni Janadhi, an Information Technology 2nd year undergraduate at the University of Moratuwa interested in software development, problem solving, and full-stack solutions.',
+      'Personal portfolio of Chathuni Janadhi Jayaweera, an Information Technology 2nd year undergraduate at the University of Moratuwa interested in software development, problem solving, and full-stack solutions.',
   },
   contact: {
-    name: 'Chathuni Janadhi',
+    name: 'Chathuni Janadhi Jayaweera',
     role: 'Information Technology Undergraduate',
     location: 'Matara, Sri Lanka',
     email: 'janadhichathuni@gmail.com',
@@ -58,11 +58,11 @@ export const portfolio: PortfolioData = {
     {
       id: 'al',
       status: 'Completed',
-      institution: 'Sujatha College, Matara',
+      institution: 'Sujatha Vidyalaya, Matara',
       qualification: 'G.C.E. Advanced Level — Biological Science Stream',
       location: 'Sri Lanka',
       description:
-        'Completed the G.C.E. Advanced Level examination in the Biological Science stream at Sujatha College, Matara, building a strong foundation in sciences and analytical thinking ahead of university.',
+        'Completed the G.C.E. Advanced Level examination in the Biological Science stream at Sujatha Vidyalaya, Matara, building a strong foundation in sciences and analytical thinking ahead of university.',
       subjects: [
         { name: 'Chemistry', grade: 'A' },
         { name: 'Biology', grade: 'B' },
@@ -73,10 +73,10 @@ export const portfolio: PortfolioData = {
       id: 'uom',
       status: 'Currently Studying',
       institution: 'University of Moratuwa',
-      qualification: 'B.Sc. (Hons) in Information Technology (2nd Year)',
+      qualification: 'B.Sc. (Hons) in Information Technology',
       location: 'Sri Lanka',
       description:
-        '2nd year undergraduate pursuing an honours degree in Information Technology with a focus on software engineering, systems, and building production-quality applications.',
+        'Currently studying as a 2nd year undergraduate pursuing a B.Sc. (Hons) degree in Information Technology at the University of Moratuwa, focusing on software engineering, systems design, and full-stack applications.',
     },
   ],
   skills: [
@@ -154,6 +154,13 @@ export const portfolio: PortfolioData = {
         'A comprehensive elderly care management platform designed to connect administrators, doctors, caregivers, patients, and family members through a centralized digital system.',
       overview:
         'My primary contribution to the Elderly Care Management System (ECMS) focused on the implementation of the Home Page, Navigation Bar, Doctor Dashboard, and associated doctor-related functionalities. My responsibilities encompassed both frontend and backend development, including user interface design, API integration, database development, business logic implementation, appointment and prescription management, doctor availability and channeling, payment-related functionality, and prescription email notifications. I also contributed to the software engineering documentation related to the functionalities developed.',
+      problem:
+        'Traditional elderly care facilities and families often face fragmented communication, paper-based prescription tracking, uncoordinated doctor availability, and inefficient appointment scheduling. ECMS was created to centralize patient management, channeling workflows, medical history tracking, and doctor-caregiver-family collaboration into a unified digital platform.',
+      solution:
+        'A modern full-stack web application built with React, NestJS, and PostgreSQL that streamlines doctor channeling, patient health tracking, prescription management with automated email dispatches, and responsive user interfaces.',
+      challenges: '',
+      learnings:
+        'Gained hands-on experience in full-stack architecture, relational database design with NestJS & PostgreSQL, state management in React, RESTful API design, and multi-role user flow integration.',
       myContributions: [
         'Home Page & Navigation: Developed the principal Home Page with responsive layouts, service information, smooth scrolling, reveal animations, and parallax effects using React & TypeScript, alongside a reusable Navigation Bar with responsive mobile dropdown.',
         'Doctor Dashboard: Built a centralized interface for managing appointments, elderly patient information, prescriptions, doctor availability, channeling slots, and payment status with reusable components.',
@@ -172,10 +179,20 @@ export const portfolio: PortfolioData = {
         'REST API',
         'Cloudinary',
       ],
+      features: [
+        'Responsive Home Page & Navigation Bar',
+        'Centralized Doctor Dashboard',
+        'Doctor Availability & Channeling Workflow',
+        'Appointment & Medical History Management',
+        'Prescription Management & Automated SMTP Email Notifications',
+        'Role-based Access & RESTful API Architecture',
+      ],
       links: {
         github: 'https://github.com/Chamalka-heshi/Elderly-Home-Care-Management-System',
         live: 'https://frontend-one-beta-73.vercel.app/',
       },
+      image: '/images/projects/ecms-placeholder.svg',
+      imageAlt: 'Elderly Care Management System (ECMS)',
     },
   ],
   journey: [
@@ -254,5 +271,3 @@ export const portfolio: PortfolioData = {
     },
   ],
 }
-
-

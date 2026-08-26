@@ -21,7 +21,7 @@
 :root {
   --bg: #faf7f5;
   --elevated: #ffffff;
-  --card: rgba(255, 255, 255, 0.82);
+  --card: rgba(255, 255, 255, 0.85);
   --fg: #221a2c;
   --muted: #6b6178;
   --border: rgba(90, 40, 95, 0.12);
@@ -36,7 +36,7 @@
 .dark {
   --bg: #120e18;
   --elevated: #1c1726;
-  --card: rgba(28, 23, 38, 0.8);
+  --card: rgba(28, 23, 38, 0.85);
   --fg: #faf5ff;
   --muted: #a99eb7;
   --border: rgba(221, 214, 254, 0.12);

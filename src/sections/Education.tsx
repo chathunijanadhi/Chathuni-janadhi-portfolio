@@ -7,7 +7,11 @@ export function Education() {
   return (
     <section id="education" className="section-band py-16 sm:py-24 lg:py-32">
       <Container>
-        <SectionHeading eyebrow="Academic" title="Education" />
+        <SectionHeading
+          eyebrow="Academic Background"
+          title="Education"
+          description="Currently studying towards a B.Sc. (Hons) in Information Technology at the University of Moratuwa."
+        />
         <div className="mt-8 sm:mt-12">
           <Timeline>
             {portfolio.education.map((entry, index) => (
@@ -28,5 +32,3 @@ export function Education() {
     </section>
   )
 }
-
-

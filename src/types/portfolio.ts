@@ -8,6 +8,12 @@ export type Stat = {
   label: string
 }
 
+export type SocialLink = {
+  id: 'github' | 'linkedin' | 'email'
+  label: string
+  href: string
+}
+
 export type EducationSubject = {
   name: string
   grade?: string
@@ -23,8 +29,11 @@ export type EducationEntry = {
   subjects?: EducationSubject[]
 }
 
+export type SkillLevel = 'Comfortable' | 'Familiar' | 'Learning'
+
 export type Skill = {
   name: string
+  level?: SkillLevel
 }
 
 export type SkillGroup = {
@@ -48,8 +57,8 @@ export type Service = {
 }
 
 export type ProjectLinks = {
-  github?: string
-  live?: string
+  github: string
+  live: string
 }
 
 export type Project = {
@@ -61,14 +70,16 @@ export type Project = {
   role?: string
   myContributions?: string[]
   description: string
-  overview?: string
-  problem?: string
-  solution?: string
-  challenges?: string
-  learnings?: string
+  overview: string
+  problem: string
+  solution: string
+  challenges: string
+  learnings: string
   technologies: string[]
-  features?: string[]
-  links?: ProjectLinks
+  features: string[]
+  links: ProjectLinks
+  image: string
+  imageAlt: string
   featured?: boolean
 }
 
@@ -124,6 +135,3 @@ export type PortfolioData = {
     formspreeEndpointEnv?: string
   }
 }
-
-
-

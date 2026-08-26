@@ -17,18 +17,18 @@ export function Projects() {
     <section id="projects" className="section-band py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Selected work"
-          title="Featured Projects"
-          description="The Elderly Care Management System is the primary full-stack system designed to connect administrators, doctors, caregivers, patients, and family members."
+          eyebrow="Featured System"
+          title="Featured Project"
+          description="A production-grade full-stack web system engineered to connect administrators, doctors, caregivers, patients, and family members."
         />
 
-        {/* Projects Grid */}
+        {/* Featured Case Study Single Card Wrapper */}
         <motion.div
           variants={fadeUp(reduced)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="mt-8 max-w-2xl mx-auto sm:mt-10"
+          className="mt-10 max-w-3xl mx-auto sm:mt-12"
         >
           {portfolio.projects.map((project) => (
             <ProjectCard
@@ -48,4 +48,3 @@ export function Projects() {
     </section>
   )
 }
-
