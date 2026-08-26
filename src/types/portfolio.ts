@@ -97,6 +97,13 @@ export type Person = {
   profileImageAlt: string
 }
 
+export type Interest = {
+  id: string
+  title: string
+  description: string
+  icon: 'code' | 'lightbulb' | 'sparkles' | 'book'
+}
+
 export type PortfolioData = {
   person: Person
   seo: {
@@ -112,6 +119,7 @@ export type PortfolioData = {
   projects: Project[]
   journey: JourneyEntry[]
   services: Service[]
+  interests: Interest[]
   form?: {
     formspreeEndpointEnv?: string
   }

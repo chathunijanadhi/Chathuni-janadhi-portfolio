@@ -1,12 +1,13 @@
-﻿import { motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { Code2, Brain, Sparkles, BookOpen } from 'lucide-react'
 import { Container } from '../components/Container'
 import { SectionHeading } from '../components/SectionHeading'
 import { portfolio } from '../data/portfolio'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { fadeUp, stagger } from '../lib/motion'
+import type { Interest } from '../types/portfolio'
 
-const iconMap = {
+const iconMap: Record<Interest['icon'], typeof Code2> = {
   code: Code2,
   lightbulb: Brain,
   sparkles: Sparkles,
@@ -33,7 +34,7 @@ export function Interests() {
           viewport={{ once: true, amount: 0.2 }}
           className="mt-10 grid gap-5 sm:mt-12 sm:grid-cols-2 lg:gap-6"
         >
-          {interests.map((item, index) => {
+          {interests.map((item: Interest, index: number) => {
             const Icon = iconMap[item.icon]
             return (
               <motion.div

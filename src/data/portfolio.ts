@@ -227,6 +227,32 @@ export const portfolio: PortfolioData = {
       icon: 'cloud',
     },
   ],
+  interests: [
+    {
+      id: 'software-engineering',
+      title: 'Software Engineering',
+      description: 'Building clean, maintainable, and scalable full-stack web applications.',
+      icon: 'code',
+    },
+    {
+      id: 'cloud-devops',
+      title: 'Cloud & DevOps',
+      description: 'Exploring cloud architecture, containerization, and modern deployment strategies.',
+      icon: 'sparkles',
+    },
+    {
+      id: 'cybersecurity',
+      title: 'Cybersecurity',
+      description: 'Focusing on secure coding practices, authentication, and application security.',
+      icon: 'lightbulb',
+    },
+    {
+      id: 'continuous-learning',
+      title: 'Continuous Learning',
+      description: 'Constantly learning new languages, frameworks, and software methodologies.',
+      icon: 'book',
+    },
+  ],
 }
 
 
