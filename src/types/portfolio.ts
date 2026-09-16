@@ -106,6 +106,7 @@ export type Person = {
   location: string
   profileImage: string
   profileImageAlt: string
+  cvUrl?: string
 }
 
 export type Interest = {

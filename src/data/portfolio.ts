@@ -17,6 +17,7 @@ export const portfolio: PortfolioData = {
     profileImage:
       'https://res.cloudinary.com/dbmjoemmg/image/upload/v1787578983/WhatsApp_Image_2026-08-24_at_19.07.03_szulsx.jpg',
     profileImageAlt: 'Chathuni Janadhi Jayaweera',
+    cvUrl: 'https://drive.google.com/file/d/1WIk3amDBkdak_8Jn-oBeEZKcbr40xLS0/view?usp=drive_link',
   },
   seo: {
     title: 'Chathuni Janadhi Jayaweera | Full-Stack Developer & IT Undergraduate',
@@ -44,7 +45,7 @@ export const portfolio: PortfolioData = {
   stats: [
     { value: '1+', label: 'Years Building' },
     { value: '5+', label: 'Technologies' },
-    { value: '1', label: 'Major Full-Stack System' },
+    { value: '2', label: 'Full-Stack Projects' },
     { value: '2nd', label: 'Year Undergraduate' },
   ],
   currentlyLearning: [
@@ -191,8 +192,61 @@ export const portfolio: PortfolioData = {
         github: 'https://github.com/Chamalka-heshi/Elderly-Home-Care-Management-System',
         live: 'https://frontend-one-beta-73.vercel.app/',
       },
-      image: '/images/projects/ecms-placeholder.svg',
+      image:
+        'https://res.cloudinary.com/efjuzuge/image/upload/v1789555063/ChatGPT_Image_Sep_12_2026_10_58_26_AM.png',
       imageAlt: 'Elderly Care Management System (ECMS)',
+    },
+    {
+      id: 'clothify',
+      number: '02',
+      title: 'Clothify — Online Clothing Store',
+      year: '2026',
+      category: 'Full-Stack E-Commerce Application',
+      featured: true,
+      role: 'Full-Stack Developer — End-to-End Architecture & Implementation',
+      description:
+        'A full-stack online clothing shopping web application with a modern React storefront, secure Node.js/Express.js backend API, and PostgreSQL database — featuring product browsing, cart management, user authentication, and order handling.',
+      overview:
+        'Clothify is a complete e-commerce platform built from the ground up, encompassing a responsive React + TypeScript frontend, a RESTful Express.js backend with JWT-based authentication, and a structured PostgreSQL relational database. The application supports browsing and filtering clothing products by category, managing a shopping cart, secure user registration and login, and placing orders — demonstrating a production-ready full-stack architecture.',
+      problem:
+        'Online clothing shoppers need a seamless, intuitive, and secure digital experience for browsing products, managing wishlists and carts, and completing purchases. Clothify was built to demonstrate a real-world e-commerce system with clean architecture, secure authentication, and scalable data modelling.',
+      solution:
+        'A modern full-stack web application using React and TypeScript on the frontend, Node.js with Express.js for the RESTful API, and PostgreSQL for persistent data storage. JWT authentication secures user sessions, and the UI delivers a clean, mobile-responsive shopping experience.',
+      challenges: '',
+      learnings:
+        'Gained experience architecting a complete e-commerce system end-to-end — from relational database schema design, REST API development with Express.js, JWT authentication flows, to building a responsive React storefront with TypeScript.',
+      myContributions: [
+        'Frontend Storefront: Built a responsive shopping interface with React and TypeScript covering product listings, category filtering, product detail views, and a dynamic cart.',
+        'Backend REST API: Developed a Node.js & Express.js REST API handling product management, user authentication (registration/login with JWT), cart operations, and order processing.',
+        'Database Design: Designed and implemented a PostgreSQL relational schema covering users, products, categories, cart items, and orders with appropriate constraints and relationships.',
+        'Authentication & Security: Implemented JWT-based authentication with protected routes, secure password hashing, and role-based access control.',
+        'Deployment: Deployed the frontend to Vercel and managed backend and database hosting for a publicly accessible live application.',
+      ],
+      technologies: [
+        'React',
+        'TypeScript',
+        'Node.js',
+        'Express.js',
+        'PostgreSQL',
+        'JWT',
+        'REST API',
+        'Vercel',
+      ],
+      features: [
+        'Product Listing & Category Filtering',
+        'Product Detail Views',
+        'Shopping Cart Management',
+        'User Registration & JWT Authentication',
+        'Order Placement & Management',
+        'Responsive Mobile-First UI',
+      ],
+      links: {
+        github: 'https://github.com/chathunijanadhi/clothify.git',
+        live: 'https://clothify-one.vercel.app/',
+      },
+      image:
+        'https://res.cloudinary.com/efjuzuge/image/upload/v1789555063/ChatGPT_Image_Sep_12_2026_10_58_38_AM.png',
+      imageAlt: 'Clothify — Online Clothing Store',
     },
   ],
   journey: [

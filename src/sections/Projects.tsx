@@ -17,18 +17,18 @@ export function Projects() {
     <section id="projects" className="section-band py-16 sm:py-24 lg:py-32">
       <Container>
         <SectionHeading
-          eyebrow="Featured System"
-          title="Featured Project"
-          description="A production-grade full-stack web system engineered to connect administrators, doctors, caregivers, patients, and family members."
+          eyebrow="My Work"
+          title="Featured Projects"
+          description="Production-grade full-stack applications built with modern technologies — from comprehensive healthcare platforms to e-commerce experiences."
         />
 
-        {/* Featured Case Study Single Card Wrapper */}
+        {/* Projects Grid — single column on mobile, two columns on lg+ */}
         <motion.div
           variants={fadeUp(reduced)}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          className="mt-10 max-w-3xl mx-auto sm:mt-12"
+          viewport={{ once: true, amount: 0.05 }}
+          className="mt-10 sm:mt-12 grid gap-6 lg:grid-cols-2"
         >
           {portfolio.projects.map((project) => (
             <ProjectCard

@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, ArrowDownRight, MapPin, Sparkles } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowDownRight, Download, MapPin, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
 import { Button } from '../components/Button'
 import { Container } from '../components/Container'
@@ -101,23 +101,35 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ delay: reduced ? 0 : 0.24 }}
-            className="mt-5 flex w-full max-w-xs items-center justify-center gap-3"
+            className="mt-5 flex w-full max-w-xs flex-col items-center gap-2"
           >
-            <Button
-              onClick={() => scrollToId('projects')}
-              className="flex-1 py-2.5 text-xs font-semibold sm:text-sm"
-            >
-              View Work
-              <ArrowRight size={14} />
-            </Button>
-            <Button
-              variant="secondary"
-              onClick={() => scrollToId('contact')}
-              className="flex-1 py-2.5 text-xs font-semibold sm:text-sm"
-            >
-              Connect
-              <ArrowDownRight size={14} />
-            </Button>
+            <div className="flex w-full items-center gap-2">
+              <Button
+                onClick={() => scrollToId('projects')}
+                className="flex-1 py-2.5 text-xs font-semibold sm:text-sm"
+              >
+                View Work
+                <ArrowRight size={14} />
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => scrollToId('contact')}
+                className="flex-1 py-2.5 text-xs font-semibold sm:text-sm"
+              >
+                Connect
+                <ArrowDownRight size={14} />
+              </Button>
+            </div>
+            {person.cvUrl && (
+              <a
+                href={person.cvUrl}
+                download
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border/80 bg-elevated/70 py-2.5 px-4 text-xs font-semibold text-fg transition hover:border-accent hover:text-accent sm:text-sm"
+              >
+                <Download size={14} />
+                Download CV
+              </a>
+            )}
           </motion.div>
 
           {/* Social Quick Bar */}
@@ -201,7 +213,7 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             transition={{ delay: reduced ? 0 : 0.3 }}
-            className="mt-8 flex items-center gap-4"
+            className="mt-8 flex flex-wrap items-center gap-3"
           >
             <Button onClick={() => scrollToId('projects')}>
               View Work
@@ -211,6 +223,16 @@ export function Hero() {
               Connect
               <ArrowDownRight size={16} />
             </Button>
+            {person.cvUrl && (
+              <a
+                href={person.cvUrl}
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-elevated/70 px-5 py-2.5 text-sm font-semibold text-fg transition hover:border-accent hover:text-accent"
+              >
+                <Download size={15} />
+                Download CV
+              </a>
+            )}
           </motion.div>
 
           {/* Social / Contact Links */}
